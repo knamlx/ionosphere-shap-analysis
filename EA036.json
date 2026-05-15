@@ -1,0 +1,88 @@
+{
+  "config": {
+    "dataset_step": "15min",
+    "daily_approximate_input": true,
+    "savgol_target_columns": [
+      "foF2",
+      "MUFD"
+    ],
+    "savgol_polyorder": 2,
+    "use_filtered_target_labels": true,
+    "ml_date_start": "2025-01-01",
+    "ml_date_end": "2025-12-31",
+    "forecast_h": 24,
+    "window_list": [
+      7,
+      21,
+      28
+    ],
+    "plot_train_days": 21,
+    "verbose": 1,
+    "model_n_jobs": 3,
+    "targets": [
+      "foF2",
+      "MUFD"
+    ],
+    "min_feature_coverage": 0.3,
+    "min_train_rows": 48,
+    "min_train_target_rows": 24,
+    "min_eval_rows": 2,
+    "min_cs": 50,
+    "tau_km": 250.0,
+    "shap_smooth_days": 14,
+    "shap_sample": 150,
+    "shap_background": 80,
+    "shap_kernel_samples": 100,
+    "shap_ml_features": [
+      "TEC",
+      "hour_cos",
+      "foEs",
+      "hmF2",
+      "foE",
+      "hour_sin",
+      "B0",
+      "foF2_state",
+      "MUFD_state"
+    ],
+    "seasons": {
+      "Winter 24/25": [
+        "2024-12-01 00:00:00",
+        "2025-02-28 00:00:00"
+      ],
+      "Spring 2025": [
+        "2025-03-01 00:00:00",
+        "2025-05-31 00:00:00"
+      ],
+      "Summer 2025": [
+        "2025-06-01 00:00:00",
+        "2025-08-31 00:00:00"
+      ],
+      "Autumn 2025": [
+        "2025-09-01 00:00:00",
+        "2025-11-30 00:00:00"
+      ]
+    }
+  },
+  "station_metadata": {
+    "station_name": "EL ARENOSILLO",
+    "station_code": "EA036",
+    "latitude": 37.1,
+    "longitude": 353.3,
+    "source_paths": {
+      "2024": "datasets/EL_ARENOSILLO_EA036_2024.txt",
+      "2025": "datasets/EL_ARENOSILLO_EA036_2025.txt"
+    },
+    "source_path": "datasets/EL_ARENOSILLO_EA036_2024.txt",
+    "available_years": [
+      2024,
+      2025
+    ],
+    "datasets_dir": "/Users/w/ssd/shap_fo_MUF_pred/datasets"
+  },
+  "metrics_df_rows": 5364,
+  "trials_df_rows": 53640,
+  "preds_df_rows": 493212,
+  "phys_df_rows": 1240,
+  "summary_df_rows": 40,
+  "shap_df_rows": 149244
+}

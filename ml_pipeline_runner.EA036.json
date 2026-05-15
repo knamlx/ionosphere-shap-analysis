@@ -1,0 +1,47 @@
+{
+  "pipeline": "optuna",
+  "base_dir": ".",
+  "datasets_dir": "datasets",
+  "station_code": "EA036",
+  "models": ["IRI", "Аналит."],
+  "export_excel": true,
+  "compute_shap": true,
+  "verbose": 1,
+  "excel_name_suffix": null,
+  "pipeline_config": {
+    "savgol_target_columns": ["foF2", "MUFD"],
+    "use_filtered_target_labels": true,
+    "dataset_step": "15min",
+    "forecast_h": 24,
+    "window_list": [7, 21, 28],
+    "plot_train_days": 21,
+    "targets": ["foF2", "MUFD"],
+    "min_feature_coverage": 0.3,
+    "min_train_rows": 48,
+    "min_train_target_rows": 24,
+    "min_eval_rows": 2,
+    "ml_date_start": "2025-01-01",
+    "ml_date_end": "2025-12-31",
+    "seasons": {
+      "Winter 24/25": ["2024-12-01T00:00:00", "2025-02-28T00:00:00"],
+      "Spring 2025": ["2025-03-01T00:00:00", "2025-05-31T00:00:00"],
+      "Summer 2025": ["2025-06-01T00:00:00", "2025-08-31T00:00:00"],
+      "Autumn 2025": ["2025-09-01T00:00:00", "2025-11-30T00:00:00"]
+    }
+  },
+  "optuna_config": {
+    "n_trials": 10,
+    "val_days": 1,
+    "test_h": 24,
+    "metric": "MAE",
+    "models": ["RandomForest", "XGBoost", "ElasticNet"],
+    "random_state": 42,
+    "train_final_on_train_val": true
+  },
+  "iri_config": {
+    "lat_station": 35.025,
+    "lon_station": 33.157,
+    "alt_km": 300.0,
+    "f107_val": 150.0
+  }
+}
