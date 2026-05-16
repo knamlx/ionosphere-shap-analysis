@@ -39,8 +39,8 @@
     "train_final_on_train_val": true
   },
   "iri_config": {
-    "lat_station": 35.025,
-    "lon_station": 33.157,
+    "lat_station": 37.100,
+    "lon_station": -6.700,
     "alt_km": 300.0,
     "f107_val": 150.0
   }
